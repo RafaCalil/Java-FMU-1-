@@ -5,4 +5,10 @@
     <string name="txt_gorgeta">Gorgeta</string>
     <string name="txt_valor">Valor</string>
     <string name="txt_total">Total</string>
+    <string name="txt_database">Database</string>
+    <string name="txt_re">RE</string>
+    <string name="txt_nome">Nome</string>
+    <string name="txt_dataadmissao">DataAdmissao</string>
+    <string name="txt_salario">Salario</string>
+    <string name="txt_cadastrar">Cadastrar</string>
 </resources>
