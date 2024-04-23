@@ -16,7 +16,7 @@ public class DataBaseActivity extends AppCompatActivity {
     private EditText editTextName;
     private EditText editTextDataAdmissao;
     private EditText editTextSalario;
-
+SimpleDateFormat dateFormat = new SimpleDateFormat("dd/mm/yyyy");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,17 +26,6 @@ public class DataBaseActivity extends AppCompatActivity {
         editTextName = findViewById(R.id.editTextName);
         editTextDataAdmissao = findViewById(R.id.editTextDataAdmissao);
         editTextSalario = findViewById(R.id.editTextSalario);
-
-
-
-
-
-        AppDatabase db = AppDatabase.getInstance(this);
-        FuncionarioDao dao = db.funcionarioDao();
-        Funcionario f = new Funcionario(1,"teste1", new Date(),1000);
-        dao.insert(f);
-        limpar();
-
 
 
     }
@@ -61,11 +50,31 @@ public class DataBaseActivity extends AppCompatActivity {
             dataAdmissao = new Date();
 
         }
+
          double salario = Double.parseDouble(editTextSalario.getText().toString());
         Funcionario f = new Funcionario(re, nome,dataAdmissao,salario);
         dao.insert(f);
+        if (view.getId() == R.id.button3){
+            dao.insert(f);
+        }else if (view.getId() == R.id.button5){
+            dao.update(f);
+        } else {
+            dao.delete(f);
+
+        }
+
         limpar();
 
+
+    }
+    public void buscar (View view) {
+        AppDatabase db = AppDatabase.getInstance(this);
+        FuncionarioDao dao = db.funcionarioDao();
+        int re = Integer.parseInt(editTextRe.getText().toString());
+        Funcionario f = dao.buscarPeloRe(re);
+        editTextName.setText(f.getNome());
+        editTextDataAdmissao.setText(dateFormat.format(f.getDataAdmissao()));
+        editTextSalario.setText(Double.toString(f.getSalario()));
 
     }
 }

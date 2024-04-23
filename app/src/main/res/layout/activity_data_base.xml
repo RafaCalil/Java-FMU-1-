@@ -106,4 +106,40 @@
         app:layout_constraintBaseline_toBaselineOf="@+id/editTextSalario"
         app:layout_constraintEnd_toStartOf="@+id/editTextSalario"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="52dp"
+        android:onClick="buscar"
+        android:text="@string/txt_buscar"
+        app:layout_constraintBottom_toTopOf="@+id/button6"
+        app:layout_constraintStart_toStartOf="@+id/button6" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="64dp"
+        android:onClick="cadastrar"
+        android:text="@string/txt_alterar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/editTextName"
+        app:layout_constraintStart_toStartOf="@+id/textView2" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginBottom="71dp"
+        android:onClick="cadastrar"
+        android:text="@string/txt_excluir"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
